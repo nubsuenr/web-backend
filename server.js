@@ -1,8 +1,8 @@
 require('dotenv').config()
 const express = require('express')
 const cors  = require('cors')
-const mongoose = require('mongoose')
-const Blog = require('./models/blog')
+// const mongoose = require('mongoose')
+const Routes = require('./routes/routes')
 
 const app  = express()
 
@@ -15,29 +15,19 @@ app.set('view engine', 'ejs');
 
 
 //connection to database
-mongoose.set('strictQuery', true)
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => {
-        console.log('connected to database')
-    })
-    .catch((err) => {
-        console.log(err)
-    })
+// mongoose.set('strictQuery', true)
+// mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+//     .then(() => {
+//         console.log('connected to database')
+//     })
+//     .catch((err) => {
+//         console.log(err)
+//     })
   
 
-app.get("/biblestudies",(req,res) => {
-    Blog.find()
-    .then((Blogs) => {
-    res.json({Blogs})
-    })
-})
-app.get("/test",(req,res) => {
-    res.json({"users":["usersone","usertwo"]})
-})
-app.get("/",(req,res) => {
-    res.send("Welcome to the backend")
-})
+
+app.use(Routes)
 
 app.listen(process.env.PORT, () =>{
-    console.log("Started on http://localhost:",+process.env.PORT)
+    console.log("Started on http://localhost:"+process.env.PORT)
 })

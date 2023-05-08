@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const blogSchema = new Schema({
+const biblestudiesSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -14,11 +14,11 @@ const blogSchema = new Schema({
         type: String,
         required: true,
     },
-    body: {
+    link: {
         type: String,
         required: true,
     },
 }, {timestamps: true});
 
-const Blog = mongoose.model('Blog', blogSchema);
-module.exports = Blog;
+const Biblestudy = mongoose.model('Biblestudy', biblestudiesSchema);
+module.exports = Biblestudy;

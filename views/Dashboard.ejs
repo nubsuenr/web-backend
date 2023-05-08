@@ -1,29 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nubs Uenr Dashboard</title>
-</head>
-<body>
-    <p>This is the backend dashboard</p>
-    <% if (Blogs.length > 0){ %> <% Blogs.forEach(Blogs => { %>
-    <table style="width:100%">
-        <tr>
-          <th>Title</th>
-          <th>Date</th>
-          <th>Snippet</th>
-        </tr>
-        <tr>
-          <td><%= Blogs.title %></td>
-          <td><%= Blogs.date %></td>
-          <td><%= Blogs.snippet %></td>
-        </tr>
-      </table>
-      <% }) %> <% } else{ %>
-        <p>There are no Blogs to be displayed</p>
-        <% } %> 
-      <p><a href="/createblog">Add</a></p>
-</body>
-</html>
+<%- include('./partials/header.ejs') %>
+
+    <h1 class="heading">This is the backend dashboard</h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="display: flex; flex-wrap: wrap; justify-content: space-evenly;">
+          <div class="disp">
+            <a href="/presidents"><p>Presidents</p></a>
+          </div>
+          <div class="disp">
+            <a href="/announcements"><p>Annoucements</p></a>
+          </div>
+          <div class="disp">
+            <a href="/biblestudies"><p>Bible Studies</p></a>
+          </div>
+          <div class="disp">
+            <a href="/counselling"><p>Counselling</p></a>
+          </div>
+          <div class="disp">
+            <a href="/prayerhelp"><p>Prayer Help</p></a>
+          </div>
+          <div class="disp">
+            <a href="/executives"><p>Executives</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<%- include('./partials/footer.ejs') %>
