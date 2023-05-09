@@ -10,7 +10,12 @@ const addpresident = (req,res) => {
 const updatepresident = (req,res) => {
     res.render('presidents/updatepresident', {title:"Update President"})
 }
+const postpresident = (req,res) => {
 
+}
+// end of president routes
+
+// start of announcements
 const announcement = (req,res) => {
     res.render('announcements/index', {title:"Announcements"})
 }
@@ -23,13 +28,53 @@ const updateannoucement = (req,res) => {
 const deleteannoucement = (req,res) => {
     
 }
+// end of announcements
+
+// start of counselling
+const counselling = (req,res) => {
+    res.render('counselling/index', {title:'Counselling'})
+}
+const viewcounselling = (req,res) => {
+    res.render('counselling/viewmessage', {title:'Counselling Messages'})
+}
+const updatecounselling = (req,res) => {
+    
+}
+const postannouncement = (req,res) => {
+
+}
+// end of counselling
+
+// start of prayerhelp
+const prayerhelp = (req,res) => {
+    res.render('prayerhelp/index', {title:'Prayer Help'})
+}
+const viewcprayerhelp = (req,res) => {
+    res.render('prayerhelp/viewmessage', {title:'Prayer Messages'})
+}
+const updateprayerhelp = (req,res) => {
+    
+}
+// end of prayerhelp
+
+
+
+
 module.exports = {
     dashboard,
     president,
     addpresident,
     updatepresident,
+    postpresident,
     announcement,
     addannouncement,
     updateannoucement,
-    deleteannoucement
+    deleteannoucement,
+    postannouncement,
+    counselling,
+    viewcounselling,
+    updatecounselling,
+    prayerhelp,
+    viewcprayerhelp,
+    updateprayerhelp
   };

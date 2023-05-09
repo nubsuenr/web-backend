@@ -1,0 +1,24 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+
+<h1 class="heading"> View Message</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="post" action="/updateprayerhelp">
+                <input type="text" name="name" value="" readonly/>
+                <textarea  rows="10" type="text" name="message" value="" readonly></textarea>
+                <input type=""text name="viewed" placeholder="viewed, type yes" name="view" required />
+                <button class="btn btn-success">Update</button>
+             </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

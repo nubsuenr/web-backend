@@ -9,6 +9,9 @@ const counsellingSchema = new Schema({
         type: String,
         required: true,
     },
+    viewed : {
+        type:String,
+    }
 }, {timestamps: true});
 
 const Counselling = mongoose.model('Counselling', counsellingSchema);
