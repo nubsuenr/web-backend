@@ -8,7 +8,6 @@ const announcementSchema = new Schema({
     },
     link: {
         type: String,
-        required: true,
     },
 }, {timestamps: true});
 

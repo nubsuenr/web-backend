@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+
+<h1 class="heading"> Add President</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_btn">
+                <a href="/presidents"><i class="bi bi-bar-chart-fill"></i>Manage President</a>
+            </div>
+            <form method="post" action="/postpresident">
+                <input type="text" placeholder="Full name" name="name" required />
+                <input type="text" placeholder="Year of administration eg. 2022-2023" name="yearofadministration" required />
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

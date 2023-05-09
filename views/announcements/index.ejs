@@ -1,23 +1,24 @@
 <%- include('../partials/header.ejs') %>
 <%- include('../partials/navbar.ejs') %>
-<h1 class="heading">Presidents</h1>
+<h1 class="heading">Announcements</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="add_btn">
-                <a href="/addpresident"><i class="bi bi-plus-circle"></i>Add President</a>
+                <a href="/addannouncement"><i class="bi bi-plus-circle"></i>Add Announcement</a>
             </div>
             <div>
                 <table>
                     <tr>
-                      <th>Full Name</th>
-                      <th>Year of Administration </th>
+                      <th>Title</th>
+                      <th>Image Link </th>
                       <th>Action</th>
                     </tr>
                     <tr>
                       <td>Jill</td>
                       <td>Smith</td>
-                      <td><a href="/updatepresident" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
+                      <td><a href="/updateannouncement" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
+                        <a href="/deleteannouncememt/" style="color: red;"><i class="bi bi-trash"></i></a>
                     </td>
                     </tr>
                   </table>

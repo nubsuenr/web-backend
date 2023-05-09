@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+
+<h1 class="heading"> Update President</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_btn">
+                <a href="/presidents"><i class="bi bi-bar-chart-fill"></i>Manage President</a>
+            </div>
+            <form method="post" action="/upgradepresident/">
+                <input type="text" name="name" value="" />
+                <input type="text" name="yearofadministration" value="" />
+                <button class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

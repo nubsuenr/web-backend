@@ -1,0 +1,30 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+
+<h1 class="heading"> Add Announcement</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_btn">
+                <a href="/announcements"><i class="bi bi-bar-chart-fill"></i>Manage Announcements</a>
+            </div>
+            <form method="post" action="/postpresident">
+                <input type="text" placeholder="Words for the announcement" name="title" required />
+                <input type="text" placeholder="Image Link" name="link" />
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

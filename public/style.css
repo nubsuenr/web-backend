@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif
+    font-family: 'Montserrat', sans-serif;
 }
 .navbar{
     background-color: palegoldenrod;
@@ -61,8 +61,49 @@
     align-items: center;
     padding: 20px;
     cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.add_btn a{
+    text-decoration: none;
+    color: darkslategrey;
+}
+.add_btn a:hover{
+    color: brown;
 }
 .add_btn:hover{
     border: 2px solid aliceblue;
     background-color: palegoldenrod;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    color: white;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+    color: darkslategrey;
+  }
+table td a:hover{
+    border: 1px solid palegoldenrod;
+    padding: 5px;
+    border-radius: 5px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form input{
+    border-radius: 10px;
+    height: 50px;
+    padding-left: 8px;
+    margin-bottom: 10px;
 }
