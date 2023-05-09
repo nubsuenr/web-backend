@@ -2,14 +2,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const counsellingSchema = new Schema({
-    fullname: {
+    name: {
         type: String,
+        required: true,
     },
-    worringmessage: {
+    portfolio: {
         type: String,
+        required: true,
     },
-    viewed : {
+    year: {
         type:String,
+        required: true,
     }
 }, {timestamps: true});
 

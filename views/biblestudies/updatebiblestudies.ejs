@@ -1,0 +1,32 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+
+<h1 class="heading"> Add Bible Studies Content</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_btn">
+                <a href="/biblestudies"><i class="bi bi-bar-chart-fill"></i>Manage Bible Studies Content</a>
+            </div>
+            <form method="post" action="/upgradebiblestudies">
+                <input type="text" placeholder="title" name="title" value="" />
+                <input type="text" placeholder="snippet" name="snippet" value="" />
+                <input type="text" placeholder="date" name="date" value="" />
+                <input type="text" placeholder="Document link" name="link" value="" />
+                <button class="btn btn-success">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>
