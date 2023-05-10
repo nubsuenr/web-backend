@@ -27,6 +27,7 @@ router.post('/updateprayerhelp/:id',routescontroller.updateprayerhelp)
 router.post('/postprayerhelp',routescontroller.postprayerhelp)
 
 router.get('/biblestudies',routescontroller.biblestudies)
+router.get('/biblestudy',routescontroller.biblestudys)
 router.get('/addbiblestudies',routescontroller.addbiblestudies)
 router.get('/updatebiblestudies/:id',routescontroller.updatebiblestudies)
 router.get('/deletebiblestudies/:id',routescontroller.deletebiblestudies)

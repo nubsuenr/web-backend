@@ -148,6 +148,13 @@ const biblestudies = async(req,res) => {
     })
     
 }
+const biblestudys = (req,res) => {
+    Biblestudy.find()
+    .then((data) => {
+        res.send(data)
+    })
+    
+}
 const updatebiblestudies = (req,res) => {
     Biblestudy.findById(req.params.id)
     .then((data) => {
@@ -216,5 +223,6 @@ module.exports = {
     addbiblestudies,
     postbiblestudies,
     upgradebiblestudies,
-    deletebiblestudies
+    deletebiblestudies,
+    biblestudys
   };
