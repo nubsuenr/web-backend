@@ -9,6 +9,9 @@ const prayerhelpSchema = new Schema({
         type: String,
         required: true,
     },
+    viewed: {
+        type: String,
+    }
 }, {timestamps: true});
 
 const Prayerhelp = mongoose.model('Prayerhelp', prayerhelpSchema);

@@ -22,15 +22,16 @@ router.post('/postcounselling',routescontroller.postcounselling)
 
 
 router.get('/prayerhelp',routescontroller.prayerhelp)
-router.get('/viewprayerhelp',routescontroller.viewprayerhelp)
-router.post('/updateprayerhelp',routescontroller.updateprayerhelp)
+router.get('/viewprayerhelp/:id',routescontroller.viewprayerhelp)
+router.post('/updateprayerhelp/:id',routescontroller.updateprayerhelp)
+router.post('/postprayerhelp',routescontroller.postprayerhelp)
 
 router.get('/biblestudies',routescontroller.biblestudies)
 router.get('/addbiblestudies',routescontroller.addbiblestudies)
-router.get('/updatebiblestudies',routescontroller.updatebiblestudies)
-router.get('/deletebiblestudies',routescontroller.deletebiblestudies)
+router.get('/updatebiblestudies/:id',routescontroller.updatebiblestudies)
+router.get('/deletebiblestudies/:id',routescontroller.deletebiblestudies)
 router.post('/postbiblestudies', routescontroller.postbiblestudies)
-router.get('/deletebiblestudies', routescontroller.deletebiblestudies)
+router.post('/upgradebiblestudies/:id', routescontroller.upgradebiblestudies)
 
 router.get('/test', (req,res) => {
     res.render("CreateBlog")

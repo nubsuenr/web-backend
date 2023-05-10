@@ -92,11 +92,7 @@ table {
     background-color: #f2f2f2;
     color: darkslategrey;
   }
-table td a:hover{
-    border: 1px solid palegoldenrod;
-    padding: 5px;
-    border-radius: 5px;
-}
+
 form{
     display: flex;
     flex-direction: column;

@@ -6,9 +6,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="/updateprayerhelp">
-                <input type="text" name="name" value="" readonly/>
-                <textarea  rows="10" type="text" name="message" value="" readonly></textarea>
+            <form method="post" action="/updateprayerhelp/<%- prayerhelp._id %>">
+                <input type="text" name="name" value="<%- prayerhelp.name %>" readonly/>
+                <input  rows="10" type="text" name="message" value="<%- prayerhelp.message %>" readonly />
                 <input type=""text name="viewed" placeholder="viewed, type yes" name="view" required />
                 <button class="btn btn-success">Update</button>
              </form>
