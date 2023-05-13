@@ -143,6 +143,7 @@ const postprayerhelp = async(req,res) => {
 // start of biblestudies
 const biblestudies = async(req,res) => {
     Biblestudy.find()
+    .sort({ createdAt: -1 })
     .then((data) => {
         res.render('biblestudies/index', {title:'Bible Studies Content', biblestudys:data})
     })
