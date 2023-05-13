@@ -151,6 +151,7 @@ const biblestudies = async(req,res) => {
 }
 const biblestudys = (req,res) => {
     Biblestudy.find()
+    .sort({ createdAt: -1 })
     .then((data) => {
         res.send(data)
     })
