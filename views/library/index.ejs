@@ -15,14 +15,18 @@
                       <th>Book url </th>
                       <th>Action</th>
                     </tr>
+                    <% if (Library.length > 0){ %> <% Library.forEach(Library => { %>
                     <tr>
-                      <td>Jill</td>
-                      <td>Smith</td>
-                      <td>Smith</td>
+                      <td><%= Library.book_title %></td>
+                      <td><%= Library.author_name %></td>
+                      <td><%= Library.link %></td>
                       <td><a href="/updatelibrarybook/<%- Library._id %>" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
                         <a href="/deletelibrarybook/<%- Library._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
                     </td>
                     </tr>
+                    <% }) %> <% } else{ %>
+                        <p>There are no Library Books to be displayed</p>
+                      <% } %>
                   </table>
                   
             </div>

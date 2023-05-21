@@ -9,7 +9,7 @@
             <div class="add_btn">
                 <a href="/librarybooks"><i class="bi bi-bar-chart-fill"></i>Manage Library Books</a>
             </div>
-            <form method="post" action="/upgradelibrarybook/<%- librarybook._id">
+            <form method="post" action="/upgradelibrarybook/<%- librarybook._id %>">
                 <input type="text" placeholder="Book title" name="book_title" value="<%- librarybook.book_title %>" />
                 <input type="text" placeholder="Name of Author" name="author_name" value="<%- librarybook.author_name %>" />
                 <input type="text" placeholder="Book url" name="link" value="<%- librarybook.link %>"/>

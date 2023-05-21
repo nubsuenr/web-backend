@@ -58,7 +58,7 @@ const announcement = (req,res) => {
     })
     }
 const addannouncement = (req,res) => {
-    res.render('announcement/addannouncement', {title:"Add Announcement"})
+    res.render('announcements/addannouncement', {title:"Add Announcement"})
 }
 const updateannoucement = (req,res) => {
     Announcement.findById(req.params.id)
@@ -234,7 +234,7 @@ const library =(req,res) => {
 const addlibrarybook = (req,res) => {
     res.render('library/addlibrarybook', {title:'Add Library book Content'})
 }
-const postlibrarybook = async(res,req) => {
+const postlibrarybook = async(req,res) => {
     
     const data = new Library({
         book_title:req.body.book_title,
@@ -247,7 +247,7 @@ const postlibrarybook = async(res,req) => {
 const updatelibrarybook = (req,res) =>{
     Library.findById(req.params.id)
     .then((data) => {
-        res.render('library/updatelibrarybook', {title:'Update Library Book Content', librarybook:data})
+        res.render('library/updatelibrary', {title:'Update Library Book Content', librarybook:data})
     })
 }
 const deletelibrarybook = (req,res) => {
@@ -290,6 +290,13 @@ const deletegallery = (req,res) => {
         res.redirect("/gallery")
     })
 }
+const postgallery = async(req,res) => {
+    const data = new Gallery({
+        image_id:req.body.image_id
+    })
+    await Gallery.insertMany([data])
+    res.redirect('/gallery')
+}
 //end of gallery
 
 module.exports = {
@@ -329,5 +336,6 @@ module.exports = {
     gallery,
     gallerie,
     addgallery,
-    deletegallery
+    deletegallery,
+    postgallery
   };

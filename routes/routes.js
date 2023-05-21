@@ -46,6 +46,7 @@ router.get('/gallery', routescontroller.gallery)
 router.get('/gallerie', routescontroller.gallerie)
 router.get('/addgallery', routescontroller.addgallery)
 router.get('/deletegallery/:id',routescontroller.deletegallery)
+router.post('/postgallery', routescontroller.postgallery)
 
 router.get('/test', (req,res) => {
     res.render("CreateBlog")

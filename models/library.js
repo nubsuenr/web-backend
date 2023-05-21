@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 const librarySchema = new Schema({
     book_title: {
         type: String,
-        required: true,
+        // required: true,
     },
     author_name: {
         type: String,
-        required: true,
+        // required: true,
     },
     link: {
         type: String,
-        required: true,
+        // required: true,
     },
 }, {timestamps: true});
 

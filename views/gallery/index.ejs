@@ -13,12 +13,16 @@
                       <th>Image id</th>
                       <th>Action</th>
                     </tr>
+                    <% if (Gallery.length > 0){ %> <% Gallery.forEach(Gallery => { %>
                     <tr>
-                      <td>Jill</td>
+                      <td><img src="https://drive.google.com/uc?id=<%= Gallery.image_id %>" class="img-thumbnail" style="width: 100px;height: 100px;"></td>
                       <td>
                         <a href="/deletegallery/<%- Gallery._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
                       </td>
                     </tr>
+                    <% }) %> <% } else{ %>
+                        <p>There are no Images to be displayed</p>
+                      <% } %>
                   </table>
                   
             </div>
