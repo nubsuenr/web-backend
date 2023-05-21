@@ -34,6 +34,19 @@ router.get('/deletebiblestudies/:id',routescontroller.deletebiblestudies)
 router.post('/postbiblestudies', routescontroller.postbiblestudies)
 router.post('/upgradebiblestudies/:id', routescontroller.upgradebiblestudies)
 
+router.get('/librarybooks', routescontroller.librarybooks)
+router.get('/library',routescontroller.library)
+router.get('/addlibrarybook', routescontroller.addlibrarybook)
+router.post('/postlibrarybook', routescontroller.postlibrarybook)
+router.get('/updatelibrarybook/:id',routescontroller.updatelibrarybook)
+router.get('/deletelibrarybook/:id',routescontroller.deletelibrarybook)
+router.post('/upgradelibrarybook/:id', routescontroller.upgradelibrarybook)
+
+router.get('/gallery', routescontroller.gallery)
+router.get('/gallerie', routescontroller.gallerie)
+router.get('/addgallery', routescontroller.addgallery)
+router.get('/deletegallery/:id',routescontroller.deletegallery)
+
 router.get('/test', (req,res) => {
     res.render("CreateBlog")
 })

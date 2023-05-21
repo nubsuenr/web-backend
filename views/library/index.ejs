@@ -1,24 +1,26 @@
 <%- include('../partials/header.ejs') %>
 <%- include('../partials/navbar.ejs') %>
-<h1 class="heading">Announcements</h1>
+<h1 class="heading">Library Books</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="add_btn">
-                <a href="/addannouncement"><i class="bi bi-plus-circle"></i>Add Announcement</a>
+                <a href="/addlibrarybook"><i class="bi bi-plus-circle"></i>Add Library Books</a>
             </div>
             <div>
                 <table>
                     <tr>
-                      <th>Description</th>
-                      <th>Image Link </th>
+                      <th>Book Title</th>
+                      <th>Author </th>
+                      <th>Book url </th>
                       <th>Action</th>
                     </tr>
                     <tr>
                       <td>Jill</td>
                       <td>Smith</td>
-                      <td><a href="/updateannouncement/<%- Announcement._id %>" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
-                        <a href="/deleteannouncememt/<%- Announcement._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                      <td>Smith</td>
+                      <td><a href="/updatelibrarybook/<%- Library._id %>" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
+                        <a href="/deletelibrarybook/<%- Library._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
                     </td>
                     </tr>
                   </table>

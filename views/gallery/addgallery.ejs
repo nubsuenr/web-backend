@@ -2,15 +2,14 @@
 <%- include('../partials/navbar.ejs') %>
 
 
-<h1 class="heading"> Add Announcement</h1>
+<h1 class="heading"> Add Gallery</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="add_btn">
-                <a href="/announcements"><i class="bi bi-bar-chart-fill"></i>Manage Announcements</a>
+                <a href="/gallery"><i class="bi bi-bar-chart-fill"></i>Manage Gallery</a>
             </div>
-            <form method="post" action="/postannouncement">
-                <input type="text" placeholder="Description of the announcement" name="description" required />
+            <form method="post" action="/postgallery">
                 <input type="text" placeholder="Image Link" name="link" required/>
                 <button class="btn btn-primary">Submit</button>
             </form>

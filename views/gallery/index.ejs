@@ -1,25 +1,23 @@
 <%- include('../partials/header.ejs') %>
 <%- include('../partials/navbar.ejs') %>
-<h1 class="heading">Announcements</h1>
+<h1 class="heading">Gallery</h1>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="add_btn">
-                <a href="/addannouncement"><i class="bi bi-plus-circle"></i>Add Announcement</a>
+                <a href="/addgallery"><i class="bi bi-plus-circle"></i>Add Gallery</a>
             </div>
             <div>
                 <table>
                     <tr>
-                      <th>Description</th>
-                      <th>Image Link </th>
+                      <th>Image id</th>
                       <th>Action</th>
                     </tr>
                     <tr>
                       <td>Jill</td>
-                      <td>Smith</td>
-                      <td><a href="/updateannouncement/<%- Announcement._id %>" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
-                        <a href="/deleteannouncememt/<%- Announcement._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
-                    </td>
+                      <td>
+                        <a href="/deletegallery/<%- Gallery._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                      </td>
                     </tr>
                   </table>
                   

@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const announcementSchema = new Schema({
-    description: {
+const librarySchema = new Schema({
+    book_title: {
+        type: String,
+        required: true,
+    },
+    author_name: {
         type: String,
         required: true,
     },
@@ -12,5 +16,5 @@ const announcementSchema = new Schema({
     },
 }, {timestamps: true});
 
-const Announcement = mongoose.model('Announcement', announcementSchema);
-module.exports = Announcement;
+const Library = mongoose.model('Library', librarySchema);
+module.exports = Library;

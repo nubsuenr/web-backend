@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/navbar.ejs') %>
+
+
+<h1 class="heading"> Add Library Book</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_btn">
+                <a href="/librarybooks"><i class="bi bi-bar-chart-fill"></i>Manage Library Books</a>
+            </div>
+            <form method="post" action="/postlibrarybook">
+                <input type="text" placeholder="Book title" name="book_title" required />
+                <input type="text" placeholder="Name of Author" name="author_name" required />
+                <input type="text" placeholder="Book url" name="link" required/>
+                <button class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

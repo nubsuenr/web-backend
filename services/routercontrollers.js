@@ -1,8 +1,12 @@
 const President = require("../models/presidents")
 const Counselling = require("../models/counselling")
 const Prayerhelp = require("../models/prayerhelp")
-const biblestudy = require("../models/biblestudy")
 const Biblestudy = require("../models/biblestudy")
+const Library = require("../models/library")
+const Announcement = require("../models/announcement")
+const Gallery =  require("../models/gallery")
+
+
 
 
 
@@ -48,19 +52,34 @@ const postpresident = async(req,res) => {
 
 // start of announcements
 const announcement = (req,res) => {
-    res.render('announcements/index', {title:"Announcements"})
-}
+    Announcement.find()
+    .then((data) => {
+        res.render('announcements/index', {title:"Announcements", Announcement:data})
+    })
+    }
 const addannouncement = (req,res) => {
-    res.render('announcements/addannouncement', {title:"Add Announcement"})
+    res.render('announcement/addannouncement', {title:"Add Announcement"})
 }
 const updateannoucement = (req,res) => {
-    res.render('announcements/updateannouncement', {title:"Update Annoucement"})
+    Announcement.findById(req.params.id)
+        .then((data) => {
+    res.render('announcements/updateannouncement', {title:"Update Annoucement", Announcement:data})
+        })
 }
 const deleteannoucement = (req,res) => {
-    
+    Announcement.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect("/announcements")
+    })
 }
-const postannouncement = (req,res) => {
+const postannouncement = async(req,res) => {
+    const data = new Announcement({
+        description:req.body.description,
+        link:req.body.link
+    })
 
+    await Announcement.insertMany([data])
+    res.redirect('/announcements')
 }
 // end of announcements
 
@@ -197,8 +216,81 @@ const deletebiblestudies = (req,res) => {
 }
 // end of prayerhelp
 
+// start of library
+const librarybooks = (req,res) => {
+    Library.find()
+    .sort({ createdAt: -1 })
+    .then((data) => {
+        res.render('library/index', {title:'Library', Library:data})
+    })
+}
+const library =(req,res) => {
+    Library.find()
+    .sort({ createdAt: -1 })
+    .then((data) => {
+        res.send(data)
+    })
+}
+const addlibrarybook = (req,res) => {
+    res.render('library/addlibrarybook', {title:'Add Library book Content'})
+}
+const postlibrarybook = async(res,req) => {
+    
+    const data = new Library({
+        book_title:req.body.book_title,
+        author_name:req.body.author_name,
+        link:req.body.link
+    })
+    await Library.insertMany([data])
+    res.redirect('/librarybooks')
+}
+const updatelibrarybook = (req,res) =>{
+    Library.findById(req.params.id)
+    .then((data) => {
+        res.render('library/updatelibrarybook', {title:'Update Library Book Content', librarybook:data})
+    })
+}
+const deletelibrarybook = (req,res) => {
+    Library.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect("/librarybooks")
+    })
+}
+const upgradelibrarybook = (req,res) => {
+    Library.findByIdAndUpdate(req.params.id, req.body,{new:false})        
+    .then(() => {
+        res.redirect("/librarybooks")
+    })
+}
+// end of library
 
 
+
+// start of gallery
+const gallery = (req,res) => {
+    Gallery.find()
+    .sort({ createdAt: -1 })
+    .then((data) => {
+        res.render('gallery/index',{title:"Gallery", Gallery:data})
+    })
+}
+const gallerie = (req,res) => {
+    Gallery.find()
+    .sort({createdAt: -1})
+    .then((data) => {
+        res.send(data)
+    })
+}
+const addgallery = (req,res) => {
+    res.render('gallery/addgallery', {title:"Add Gallery"})
+}
+const deletegallery = (req,res) => {
+    Gallery.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect("/gallery")
+    })
+}
+//end of gallery
 
 module.exports = {
     dashboard,
@@ -226,5 +318,16 @@ module.exports = {
     postbiblestudies,
     upgradebiblestudies,
     deletebiblestudies,
-    biblestudys
+    biblestudys,
+    librarybooks,
+    addlibrarybook,
+    postlibrarybook,
+    updatelibrarybook,
+    library,
+    deletelibrarybook,
+    upgradelibrarybook,
+    gallery,
+    gallerie,
+    addgallery,
+    deletegallery
   };
