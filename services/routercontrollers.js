@@ -19,6 +19,12 @@ const president = async(req,res) => {
         res.render('presidents/index', {title:"Presidents", presidents: data})
     })
     }
+const presidents = async(req,res) => {
+    President.find()
+    .then((data) => {
+        res.send(data)
+    })
+}    
 const addpresident = async(req,res) => {
     res.render('presidents/addpresident', {title:"Add President"})
 }
@@ -302,6 +308,7 @@ const postgallery = async(req,res) => {
 module.exports = {
     dashboard,
     president,
+    presidents,
     addpresident,
     updatepresident,
     upgradepresident,

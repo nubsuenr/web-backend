@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get('/', routescontroller.dashboard)
 router.get('/presidents',routescontroller.president)
+router.get('/presidentes',routescontroller.presidents)
 router.get('/addpresident',routescontroller.addpresident)
 router.get('/updatepresident/:id',routescontroller.updatepresident)
 router.post('/postpresident', routescontroller.postpresident)
