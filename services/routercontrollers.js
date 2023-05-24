@@ -102,8 +102,8 @@ const postcounselling = async(req,res) => {
         return
     }
     const data = new Counselling({
-        fullname:fullname,
-        worringmessage:worringmessage,
+        fullname:req.body.fullname,
+        worringmessage:req.body.worringmessage,
         viewed:req.body.viewed
     })
 
