@@ -11,6 +11,7 @@ router.post('/postpresident', routescontroller.postpresident)
 router.post('/upgradepresident/:id', routescontroller.upgradepresident)
 
 router.get('/announcements',routescontroller.announcement)
+router.get('/announcement',routescontroller.announcements)
 router.get('/addannouncement',routescontroller.addannouncement)
 router.get('/updateannouncement',routescontroller.updateannoucement)
 router.get('/deleteannouncement',routescontroller.deleteannoucement)

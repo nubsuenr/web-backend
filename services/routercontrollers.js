@@ -57,6 +57,13 @@ const postpresident = async(req,res) => {
 // end of president routes
 
 // start of announcements
+const announcements = async(req,res) => {
+    Announcement.find()
+    .sort({ createdAt: -1 })
+    .then((data) => {
+        res.send(data)
+    })
+} 
 const announcement = (req,res) => {
     Announcement.find()
     .then((data) => {
@@ -314,6 +321,7 @@ module.exports = {
     upgradepresident,
     postpresident,
     announcement,
+    announcements,
     addannouncement,
     updateannoucement,
     deleteannoucement,
