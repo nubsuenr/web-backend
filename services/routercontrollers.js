@@ -66,6 +66,7 @@ const announcements = async(req,res) => {
 } 
 const announcement = (req,res) => {
     Announcement.find()
+    .sort({ createdAt: -1 })
     .then((data) => {
         res.render('announcements/index', {title:"Announcements", Announcement:data})
     })

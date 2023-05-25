@@ -14,13 +14,17 @@
                       <th>Image Link </th>
                       <th>Action</th>
                     </tr>
+                    <% if (Announcement.length > 0){ %> <% Announcement.forEach(Announcement => { %>
                     <tr>
-                      <td>Jill</td>
-                      <td>Smith</td>
+                      <td><%= Announcement.description %></td>
+                      <td><%= Announcement.link %></td>
                       <td><a href="/updateannouncement/<%- Announcement._id %>" style="margin-right:15px; color:green;"><i class="bi bi-pen"></i></a>
-                        <a href="/deleteannouncememt/<%- Announcement._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                        <a href="/deleteannouncement/<%- Announcement._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
                     </td>
                     </tr>
+                    <% }) %> <% } else{ %>
+                        <p>There are no Annoucemnt Content to be displayed</p>
+                      <% } %>
                   </table>
                   
             </div>
