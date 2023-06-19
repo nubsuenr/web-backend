@@ -16,6 +16,7 @@ router.get('/addannouncement',routescontroller.addannouncement)
 router.get('/updateannouncement/:id',routescontroller.updateannoucement)
 router.get('/deleteannouncement/:id',routescontroller.deleteannoucement)
 router.post('/postannouncement', routescontroller.postannouncement)
+router.post('/upgradeannouncement/:id', routescontroller.upgradeannouncement)
 
 router.get('/counselling',routescontroller.counselling)
 router.get('/viewcounselling/:id',routescontroller.viewcounselling)

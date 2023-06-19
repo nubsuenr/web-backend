@@ -95,6 +95,13 @@ const postannouncement = async(req,res) => {
     await Announcement.insertMany([data])
     res.redirect('/announcements')
 }
+const upgradeannouncement =async(req,res) => {
+    Announcement.findByIdAndUpdate(req.params.id, req.body,{new:false})        
+    .then((data) => {
+        res.redirect("/announcements")
+    })
+       
+}
 // end of announcements
 
 // start of counselling
@@ -327,6 +334,7 @@ module.exports = {
     updateannoucement,
     deleteannoucement,
     postannouncement,
+    upgradeannouncement,
     counselling,
     postcounselling,
     viewcounselling,
